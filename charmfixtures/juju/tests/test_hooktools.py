@@ -46,5 +46,5 @@ class StatusSetTest(TestCase):
         self.assertEqual([], self.status)
 
     def test_first_entry(self):
-        self.process({"args": ["state", "msg"]})
+        self.process({"args": ["status-set", "state", "msg"]})
         self.assertEqual("state: msg", self.status[0])

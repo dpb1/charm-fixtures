@@ -29,7 +29,7 @@ class StatusSet(object):
         parser = argparse.ArgumentParser()
         parser.add_argument("state")
         parser.add_argument("message", nargs="?")
-        args = parser.parse_args(proc_args["args"])
+        args = parser.parse_args(proc_args["args"][1:])
         self._entries.append("{}: {}".format(args.state, args.message))
         stdout = json.dumps(self._entries) + "\n"
         return {"stdout": io.BytesIO(stdout.encode("utf-8"))}
